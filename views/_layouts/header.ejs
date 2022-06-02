@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name='viewport' content="width=device-width, initial-scale=1" charset="utf-8">
+  <title>Blogs</title>
+  <meta charset="utf-8">
+  <script src="/tinymce/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+      selector: '#myTextArea',
+      plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+      imagetools_cors_hosts: ['picsum.photos'],
+      menubar: 'file edit view insert format tools table help',
+      toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+      toolbar_sticky: true,
+      autosave_ask_before_unload: true,
+      autosave_interval: "30s",
+      autosave_prefix: "{path}{query}-{id}-",
+      autosave_restore_when_empty: false,
+      autosave_retention: "2m",
+      image_advtab: true,
+    })
+  </script>
+  <link rel="stylesheet" href="/style/styles.css">
+
+  <nav>
+    <div class="container">
+      <div>
+        <p>BLOG WEBSITE</p>
+      </div>
+      <ul>
+        <li id="home"><a href="/">HOME</a></li>
+        <li id="compose"><a href="/compose">COMPOSE</a></li>
+        <% if (sessionInfo.userLoggedIn) {%>
+        <li><a href="/posts">VIEW POSTS</a></li>
+        <li id="logout"><a href="/logout">LOGOUT</a></li>
+        <%} else {%>
+        <li id="login"><a href="/login">LOGIN</a></li>
+        <%}%>
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div class="container">

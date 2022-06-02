@@ -1,0 +1,15 @@
+<%- include('_layouts/header') -%>
+<h1>Compose</h1>
+<form action="/compose" method="post">
+  <div class="form-group">
+    <div>
+      <label for="blogTitle" class="form-label">Title</label>
+      <input type="text" id="blogTitle" name='blogTitle' placeholder="" autofocus autocomplete="off">
+    </div>
+    <div>
+      <textarea id="myTextArea" id="blogContent" name='blogContent' rows="4"></textarea>
+    </div>
+  </div>
+  <button type="submit" name="Publish">Publish</button>
+</form>
+<%- include('_layouts/footer') -%>

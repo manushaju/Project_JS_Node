@@ -1,0 +1,17 @@
+<%- include('_layouts/header') -%>
+  <h1>Home</h1>
+  <p>
+    <%= homeStartContent%>
+  </p>
+  <% if(currentPosts.length>0){ %>
+    <h2>Current Posts</h2>
+    <div class="post-container">
+
+        <% for (var i=0; i<currentPosts.length; i++){%>
+               <div>
+      <a href=<%= 'post/'+currentPosts[i]._id %>><h2><%= currentPosts[i].postTitle %></h2></a>
+      <h5><i><%=currentPosts[i].postTime%></i></h5>
+      </div>
+      <%}}%>
+    </div>
+<%- include('_layouts/footer') -%>

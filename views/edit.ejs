@@ -1,0 +1,15 @@
+<%- include('_layouts/header') -%>
+<h1>Edit Post</h1>
+<form action="/edit/<%=post._id%>" method="post">
+  <div>
+    <div>
+      <label for="blogTitle" class="form-label">Title</label>
+      <input type="text" id="blogTitle" name='blogTitle' placeholder="" value='<%=post.postTitle%>' autofocus autocomplete="off">
+    </div>
+    <div>
+      <textarea id="myTextArea" id="blogContent" name='blogContent' rows="4"><%=post.postBody%></textarea>
+    </div>
+  </div>
+  <button type="submit" name="Publish">Edit Post</button>
+</form>
+<%- include('_layouts/footer') -%>
